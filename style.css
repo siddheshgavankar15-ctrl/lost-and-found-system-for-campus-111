@@ -1,50 +1,197 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background: #f4f4f9;
+  background: #F8F6F1;
+  color: #1E293B;
+  line-height: 1.6;
 }
 
-header {
-  background: red;
-  color: white;
-  padding: 15px;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-h1 {
-  margin: 0;
+.navbar .logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-main {
-  padding: 20px;
+.navbar img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
 
-ul {
+.navbar h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1E293B;
+}
+
+.navbar ul {
   list-style: none;
-  padding: 0;
+  display: flex;
+  gap: 20px;
 }
 
-li {
-  margin: 10px 0;
-}
-
-a {
+.navbar ul li a {
   text-decoration: none;
-  color: darkblue;
+  color: #1E293B;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 15px;
-  background: red;
-  color: white;
-  border-radius: 5px;
+.navbar ul li a:hover {
+  color: #3B82F6;
 }
 
-.btn:hover {
-  background: darkred;
-
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
 }
 
+.hero h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #475569;
+}
+
+.hero .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.hero .btn {
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: #3B82F6;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #2563EB;
+}
+
+.btn-secondary {
+  background: #F59E0B;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: #D97706;
+}
+
+/* Forms Section */
+.forms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 40px 50px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #3B82F6;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-blue {
+  background: #3B82F6;
+  color: #fff;
+}
+
+.btn-blue:hover {
+  background: #2563EB;
+}
+
+.btn-orange {
+  background: #F59E0B;
+  color: #fff;
+}
+
+.btn-orange:hover {
+  background: #D97706;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ffffff;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #64748B;
+  border-top: 1px solid #E2E8F0;
+}

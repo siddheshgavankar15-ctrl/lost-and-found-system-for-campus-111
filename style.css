@@ -12,12 +12,19 @@ body {
   line-height: 1.6;
 }
 
+/* Container: keeps content centered */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 /* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
+  padding: 15px 20px;
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   position: sticky;
@@ -32,15 +39,16 @@ body {
 }
 
 .navbar img {
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
 }
 
 .navbar h1 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: #1E293B;
+  white-space: nowrap; /* prevent wrapping */
 }
 
 .navbar ul {
@@ -113,9 +121,9 @@ body {
 /* Forms Section */
 .forms {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
-  padding: 40px 50px;
+  padding: 40px 20px;
 }
 
 .card {
@@ -123,6 +131,8 @@ body {
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 500px; /* limit size on large screens */
+  margin: 0 auto;
 }
 
 .card h3 {
@@ -194,4 +204,42 @@ footer {
   font-size: 14px;
   color: #64748B;
   border-top: 1px solid #E2E8F0;
+}
+
+/* Responsive Navbar */
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .navbar.active ul {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero h2 {
+    font-size: 48px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
 }

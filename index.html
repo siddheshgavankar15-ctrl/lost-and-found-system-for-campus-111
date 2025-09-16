@@ -3,30 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lost & Found - Campus</title>
+  <title>Lost & Found - Satish Pradhan Dnyansadhna College</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Campus Lost & Found System</h1>
-    <nav>
-      <ul>
-        <li><a href="lost.html">Report Lost Item</a></li>
-        <li><a href="found.html">Report Found Item</a></li>
-        <li><a href="items.html">Browse Items</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section>
-      <h2>Welcome!</h2>
-      <p>If you lost something or found an item, report it here. Let’s help each other 🙂</p>
-    </section>
-  </main>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo-area">
+      <img src="college-logo.png" alt="College Logo">
+      <h1>Satish Pradhan Dnyansadhna College</h1>
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Lost & Found Campus System</h2>
+    <p>Report and search for lost items on campus</p>
+    <div class="buttons">
+      <a href="#report" class="btn btn-primary">Report Lost Item</a>
+      <a href="#search" class="btn btn-secondary">Search Found Item</a>
+    </div>
+  </section>
+
+  <!-- Forms Section -->
+  <section class="forms">
+    <div class="card" id="report">
+      <h3>Report Lost Item</h3>
+      <form>
+        <div class="form-group">
+          <label for="lost-name">Name</label>
+          <input type="text" id="lost-name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="lost-item">Item</label>
+          <select id="lost-item">
+            <option>Mobile</option>
+            <option>Bag</option>
+            <option>ID Card</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="lost-location">Location</label>
+          <input type="text" id="lost-location" placeholder="Where did you lose it?">
+        </div>
+        <button type="submit" class="btn-submit btn-blue">Submit</button>
+      </form>
+    </div>
+
+    <div class="card" id="search">
+      <h3>Search Found Item</h3>
+      <form>
+        <div class="form-group">
+          <label for="found-name">Name</label>
+          <input type="text" id="found-name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="found-item">Item</label>
+          <select id="found-item">
+            <option>Mobile</option>
+            <option>Bag</option>
+            <option>ID Card</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="found-location">Location</label>
+          <input type="text" id="found-location" placeholder="Where to search?">
+        </div>
+        <button type="submit" class="btn-submit btn-orange">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Campus Lost & Found | All Rights Reserved</p>
+    © 2025 Satish Pradhan Dnyansadhna College | Lost & Found System
   </footer>
+
 </body>
 </html>

@@ -3,102 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lost & Found - Satish Pradhan Dnyansadhna College</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>Lost & Found Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 30px;
+    }
+    form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input[type="text"], select, input[type="file"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
+  <form id="lostFoundForm" action="/submit" method="POST" enctype="multipart/form-data">
+    <h2>Report Lost/Found Item</h2>
 
-  <!-- Navbar -->
-  <nav class="navbar container">
-    <div class="logo-area">
-      <img src="college-logo.png.jpeg" alt="College Logo">
-      <h1>Satish Pradhan Dnyansadhna College</h1>
-    </div>
-    <div class="menu-toggle">☰</div>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+    <label for="itemName">Item Name:</label>
+    <input type="text" id="itemName" name="itemName" placeholder="Enter item name" required>
 
-  <!-- Hero Section -->
-  <section class="hero container">
-    <h2>Lost & Found Campus System</h2>
-    <p>Report and search for lost items on campus</p>
-    <div class="buttons">
-      <a href="#report" class="btn btn-primary">Report Lost Item</a>
-      <a href="#search" class="btn btn-secondary">Search Found Item</a>
-    </div>
-  </section>
+    <label for="itemCategory">Item Category:</label>
+    <select id="itemCategory" name="itemCategory" required>
+      <option value="" disabled selected>Select an item</option>
+      <option value="mobile">Mobile</option>
+      <option value="bag">Bag</option>
+      <option value="idCard">ID Card</option>
+      <option value="other">Other</option>
+      <option value="custom">Custom</option>
+    </select>
 
-  <!-- Forms Section -->
-  <section class="forms container">
-    <div class="card" id="report">
-      <h3>Report Lost Item</h3>
-      <form>
-        <div class="form-group">
-          <label for="lost-name">Name</label>
-          <input type="text" id="lost-name" placeholder="Enter your name">
-        </div>
-        <div class="form-group">
-          <label for="lost-item">Item</label>
-          <select id="lost-item">
-            <option>Mobile</option>
-            <option>Bag</option>
-            <option>ID Card</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="lost-location">Location</label>
-          <input type="text" id="lost-location" placeholder="Where did you lose it?">
-        </div>
-        <button type="submit" class="btn-submit btn-blue">Submit</button>
-      </form>
-    </div>
+    <!-- Custom item input, hidden by default -->
+    <input type="text" id="customItem" name="customItem" placeholder="Enter your item" style="display:none;">
 
-    <div class="card" id="search">
-      <h3>Search Found Item</h3>
-      <form>
-        <div class="form-group">
-          <label for="found-name">Name</label>
-          <input type="text" id="found-name" placeholder="Enter your name">
-        </div>
-        <div class="form-group">
-          <label for="found-item">Item</label>
-          <select id="found-item">
-            <option>Mobile</option>
-            <option>Bag</option>
-            <option>ID Card</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="found-location">Location</label>
-          <input type="text" id="found-location" placeholder="Where did you find it?">
-        </div>
-        <button type="submit" class="btn-submit btn-orange">Search</button>
-      </form>
-    </div>
-  </section>
+    <label for="itemLocation">Location Found/Lost:</label>
+    <input type="text" id="itemLocation" name="itemLocation" placeholder="Enter location" required>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Satish Pradhan Dnyansadhna College | Lost & Found System
-  </footer>
+    <label for="itemImage">Upload Image (Optional):</label>
+    <input type="file" id="itemImage" name="itemImage" accept="image/*">
 
-  <!-- JS for menu toggle -->
+    <button type="submit">Submit</button>
+  </form>
+
   <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const navbar = document.querySelector('.navbar');
-    
-    toggle.addEventListener('click', () => {
-      navbar.classList.toggle('active');
+    const itemCategory = document.getElementById('itemCategory');
+    const customItem = document.getElementById('customItem');
+
+    itemCategory.addEventListener('change', function() {
+      if (this.value === 'custom') {
+        customItem.style.display = 'block';
+        customItem.required = true;
+      } else {
+        customItem.style.display = 'none';
+        customItem.required = false;
+      }
+    });
+
+    // Optional: Update selected category value before submitting
+    document.getElementById('lostFoundForm').addEventListener('submit', function(e) {
+      if (itemCategory.value === 'custom') {
+        itemCategory.value = customItem.value;
+      }
     });
   </script>
-
 </body>
 </html>
-

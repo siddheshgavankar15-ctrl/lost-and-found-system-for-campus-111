@@ -1,4 +1,4 @@
-/* Google font Roboto applied to everything */
+/* Reset & Font */
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +9,10 @@
 body {
   background: linear-gradient(135deg, #f7f7f7, #e2e8f0);
   color: #333;
+  line-height: 1.6;
 }
 
+/* ---------- HEADER ---------- */
 header {
   background-color: #0d6efd;
   color: white;
@@ -24,6 +26,7 @@ header .header-container {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 header .logo {
@@ -37,6 +40,7 @@ header h1 {
   font-size: 1.8rem;
 }
 
+/* ---------- HOMEPAGE ---------- */
 main {
   max-width: 1200px;
   margin: 40px auto;
@@ -91,6 +95,7 @@ main {
   color: #555;
 }
 
+/* ---------- BUTTON ---------- */
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -106,6 +111,119 @@ main {
   background-color: #084298;
 }
 
+/* ---------- FORMS (Lost/Found) ---------- */
+.form-section {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.form-section h2 {
+  text-align: center;
+  color: #0d6efd;
+  margin-bottom: 10px;
+}
+
+.form-section p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item-form label {
+  font-weight: 500;
+  color: #333;
+}
+
+.item-form input[type="text"],
+.item-form input[type="file"],
+.item-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-form input[type="text"]:focus,
+.item-form textarea:focus,
+.item-form input[type="file"]:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+}
+
+.item-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.item-form button {
+  align-self: center;
+  width: 150px;
+}
+
+/* ---------- VIEW ITEMS (Table) ---------- */
+.items-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.items-section h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #0d6efd;
+}
+
+.items-section p {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.items-table th, .items-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.items-table th {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.items-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.items-table img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ---------- FOOTER ---------- */
 footer {
   text-align: center;
   padding: 20px;

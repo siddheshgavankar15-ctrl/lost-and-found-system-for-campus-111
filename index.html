@@ -3,96 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lost & Found Form</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      padding: 30px;
-    }
-    form {
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input[type="text"], select, input[type="file"] {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px 15px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+  <title>Lost & Found System - Satish Pradhan Dnyanasadhana College</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form id="lostFoundForm" action="/submit" method="POST" enctype="multipart/form-data">
-    <h2>Report Lost/Found Item</h2>
+  <header>
+    <div class="header-container">
+      <img src="college-logo.png.jpeg" alt="College Logo" class="logo">
+      <h1>Satish Pradhan Dnyanasadhana College, Thane</h1>
+    </div>
+  </header>
 
-    <label for="itemName">Item Name:</label>
-    <input type="text" id="itemName" name="itemName" placeholder="Enter item name" required>
+  <main>
+    <section class="intro">
+      <h2>Lost & Found System</h2>
+      <p>Manage and report lost and found items on campus easily.</p>
+    </section>
 
-    <label for="itemCategory">Item Category:</label>
-    <select id="itemCategory" name="itemCategory" required>
-      <option value="" disabled selected>Select an item</option>
-      <option value="mobile">Mobile</option>
-      <option value="bag">Bag</option>
-      <option value="idCard">ID Card</option>
-      <option value="other">Other</option>
-      <option value="custom">Custom</option>
-    </select>
+    <section class="actions">
+      <div class="card">
+        <h3>Report Lost Item</h3>
+        <p>Fill in the details of the item you lost.</p>
+        <a href="lost.html" class="btn">Report Lost</a>
+      </div>
+      <div class="card">
+        <h3>Report Found Item</h3>
+        <p>Fill in the details of the item you found.</p>
+        <a href="found.html" class="btn">Report Found</a>
+      </div>
+      <div class="card">
+        <h3>View Items</h3>
+        <p>Browse all lost and found items.</p>
+        <a href="view.html" class="btn">View Items</a>
+      </div>
+    </section>
+  </main>
 
-    <!-- Custom item input, hidden by default -->
-    <input type="text" id="customItem" name="customItem" placeholder="Enter your item" style="display:none;">
-
-    <label for="itemLocation">Location Found/Lost:</label>
-    <input type="text" id="itemLocation" name="itemLocation" placeholder="Enter location" required>
-
-    <label for="itemImage">Upload Image (Optional):</label>
-    <input type="file" id="itemImage" name="itemImage" accept="image/*">
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <script>
-    const itemCategory = document.getElementById('itemCategory');
-    const customItem = document.getElementById('customItem');
-
-    itemCategory.addEventListener('change', function() {
-      if (this.value === 'custom') {
-        customItem.style.display = 'block';
-        customItem.required = true;
-      } else {
-        customItem.style.display = 'none';
-        customItem.required = false;
-      }
-    });
-
-    // Optional: Update selected category value before submitting
-    document.getElementById('lostFoundForm').addEventListener('submit', function(e) {
-      if (itemCategory.value === 'custom') {
-        itemCategory.value = customItem.value;
-      }
-    });
-  </script>
+  <footer>
+    <p>&copy; 2025 Satish Pradhan Dnyanasadhana College, Thane | All rights reserved.</p>
+  </footer>
 </body>
 </html>

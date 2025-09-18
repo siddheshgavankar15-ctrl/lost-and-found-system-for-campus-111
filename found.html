@@ -3,24 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Report Found Item</title>
+  <title>Report Found Item - Satish Pradhan Dnyanasadhana College</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Report Found Item</h1>
-    <a href="index.html" class="btn">Back Home</a>
+    <div class="header-container">
+      <img src="college-logo.png.jpeg" alt="College Logo" class="logo">
+      <h1>Satish Pradhan Dnyanasadhana College, Thane</h1>
+    </div>
   </header>
 
-  <form id="foundForm">
-    <label>Item Name: <input type="text" name="itemName" required></label>
-    <label>Description: <textarea name="description" required></textarea></label>
-    <label>Location Found: <input type="text" name="location" required></label>
-    <label>Date Found: <input type="date" name="dateFound" required></label>
-    <label>Contact Info: <input type="text" name="contact" required></label>
-    <button type="submit">Submit</button>
-  </form>
+  <main>
+    <section class="form-section">
+      <h2>Report Found Item</h2>
+      <p>Please provide details of the item you found</p>
 
-  <script src="script.js"></script>
+      <form action="backend/found-item-upload.php" method="POST" enctype="multipart/form-data" class="item-form">
+        <label for="item-name">Item Name</label>
+        <input type="text" id="item-name" name="item_name" placeholder="Enter item name" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" placeholder="Describe the item" required></textarea>
+
+        <label for="location">Location Found</label>
+        <input type="text" id="location" name="location" placeholder="Where did you find it?" required>
+
+        <label for="photo">Upload Photo</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+
+        <label for="contact">Contact Info</label>
+        <input type="text" id="contact" name="contact" placeholder="Your phone/email" required>
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Satish Pradhan Dnyanasadhana College, Thane | All rights reserved.</p>
+  </footer>
 </body>
 </html>
